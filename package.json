@@ -1,0 +1,19 @@
+{
+  "name": "advanced-api-starter",
+  "version": "1.0.0",
+  "description": "Starter code for the advanced apis workshop.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nessieisreal/advanced-api-starter.git"
+  },
+  "author": "Mike Ferraco <ferraco.mike@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.16.1",
+    "express": "^4.14.1",
+    "mongoose": "^4.9.1"
+  }
