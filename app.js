@@ -3,23 +3,23 @@ var app = express();
 var mongoose = require('mongoose');
 fs = require('fs');
 
-//Local connection to mongo
-var mongoUri = 'mongodb://localhost/noderest';
-mongoose.connect(mongoUri);
-var db = mongoose.connection;
-db.on('error', function () {
-  throw new Error('unable to connect to database at ' + mongoUri);
-});
+// //Local connection to mongo
+// var mongoUri = 'mongodb://localhost/noderest';
+// mongoose.connect(mongoUri);
+// var db = mongoose.connection;
+// db.on('error', function () {
+//   throw new Error('unable to connect to database at ' + mongoUri);
+// });
 
-/*
+
 // Add mongodb connection string here
-var mongodb = 'mongo_db_connection_string';
+var mongodb = 'mongodb://coryz:Gamegate1@ds141490.mlab.com:41490/caponeapis';
 mongoose.connect(mongodb);
 var db = mongoose.connection;
 
 //Bind connection to error event (to get notification of connection errors)
 db.on('error', console.error.bind(console, 'MongoDB connection error:'));
-*/
+
 
 //require the animals data model
 require('./models/animal');
