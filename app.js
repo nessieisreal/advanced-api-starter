@@ -16,5 +16,18 @@ app.get('/', function(req, res) {
 	res.send("IT WORKS!");
 });
 
+app.get('/panda', function(req, res) {
+    res.send('A Panda');
+});
+
+app.get('/zoo/:name', function(req, res) {
+
+   // Get /zoo/Panda
+   console.log(req.params.name)
+   // => {Panda}
+
+   res.send('{"id": 1, "name":"Panda", "description":"Pandas are black and white"}');
+});
+
 console.log("\n\nRunning on port 3000...\n\n")
 app.listen(3000);
