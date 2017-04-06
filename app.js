@@ -1,6 +1,15 @@
 var express = require('express');
 var app = express();
 var mongoose = require('mongoose');
+fs = require('fs');
+
+//Local connection to mongo
+var mongoUri = 'mongodb://localhost/noderest';
+mongoose.connect(mongoUri);
+var db = mongoose.connection;
+db.on('error', function () {
+  throw new Error('unable to connect to database at ' + mongoUri);
+});
 
 /*
 // Add mongodb connection string here
@@ -12,6 +21,8 @@ var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 */
 
+//require the animals data model
+require('./models/animal');
 //require the resource folder
 require('./routes')(app);
 
@@ -22,6 +33,7 @@ app.get('/', function(req, res) {
 app.get('/panda', function(req, res) {
     res.send('A Panda');
 });
+
 
 console.log("\n\nRunning on port 3000...\n\n")
 app.listen(3000);
